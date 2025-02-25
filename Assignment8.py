@@ -1,3 +1,4 @@
+#initial variables
 PIN = 1234
 balance = 1000
 withdraw_txn = []
@@ -5,10 +6,12 @@ deposit_txn = []
 txn = []
 print("Welcome to M'adiWoSika Bank")
 
-
+#Functions
+#Check balance
 def check_bal():
     print(f"Balance: GHS{balance}")
 
+#WIthdraw money
 def Withdraw():
     global balance
     global txn
@@ -25,6 +28,7 @@ def Withdraw():
         withdraw_txn.append(withd)
         txn.append(withd)
 
+#Deposit Money
 def Deposit():
     global balance
     global txn
@@ -41,6 +45,7 @@ def Deposit():
         deposit_txn.append(dep)
         txn.append(dep)
 
+#View Transactions
 def Txn():
     counter = 1
     print("Select Transaction history to view")
@@ -58,7 +63,8 @@ def Txn():
                 print(deposit_txn[-(counter)])
                 txn_range = txn_range - 1
                 counter+=1
-            
+
+    #view only withdrawals       
     elif txn_type == 2:
         txn_range = int(input('View last ??? deposits: '))
         if len(withdraw_txn) == 1:
@@ -70,6 +76,8 @@ def Txn():
                 print(withdraw_txn[-(counter)])
                 txn_range = txn_range - 1
                 counter+=1
+
+    #View both transactions           
     elif txn_type == 3:
         txn_range = int(input('View last ??? transactions: '))
         if len(txn) == 1:
@@ -85,9 +93,10 @@ def Txn():
         print('Invalid selection')
 
 
-
+#Main Program
 count = 1
 while True:
+    #Check Pin and limit retries to 3
     valid_pin = int(input('Enter your four digit PIN: '))
     if valid_pin != PIN and count <3:
         print('Wrong PIN. You have',3-count, 'more retries')
@@ -122,34 +131,6 @@ while True:
                     print('Incorrect Choice')
 
         break
-    
-
-
-    
-# while True:
-    # if valid_pin == PIN:  
-    #     print('1. Check balance\n2. Withdraw money\n3. Deposit money\n4. View transaction history\n5. Exit')
-    #     choice = input('Enter what you want to do: ')
-    #     if choice == '1':
-    #         check_bal()
-            
-    #     elif choice == '2':
-    #         Withdraw()
-
-    #     elif choice == '3':
-    #         Deposit()
-
-    #     elif choice == '4':
-    #         Txn()
-
-    #     elif choice == '5':
-    #         print('Come back and bank with us')
-    #         break
-
-
-
-    #     else:
-    #         print('Incorrect Choice')
         
 
 
