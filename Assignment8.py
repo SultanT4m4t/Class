@@ -45,6 +45,8 @@ def Txn():
     counter = 1
     print("Select Transaction history to view")
     txn_type = int(input('1. Deposits 2. Withdrawals 3. All transactions\nEnter: '))
+
+    #View only deposits
     if txn_type == 1:
         txn_range = int(input('View last ??? deposits: '))
         if len(deposit_txn) == 1:
@@ -52,7 +54,7 @@ def Txn():
         elif txn_range == 0:
             print('Cannot view zero deposits')
         else:
-            while counter <= len(deposit_txn):
+            while txn_range > 0 and counter <= len(deposit_txn):
                 print(deposit_txn[-(counter)])
                 txn_range = txn_range - 1
                 counter+=1
@@ -64,7 +66,7 @@ def Txn():
         elif txn_range == 0:
             print('Cannot view zero withdrawals')
         else:
-            while counter <= len(withdraw_txn):                
+            while txn_range > 0 and counter <= len(withdraw_txn):                
                 print(withdraw_txn[-(counter)])
                 txn_range = txn_range - 1
                 counter+=1
@@ -75,7 +77,7 @@ def Txn():
         elif txn_range == 0:
             print('Cannot view zero transactions')
         else:
-            while counter <= len(txn):                
+            while txn_range > 0 and counter <= len(txn):                
                 print(txn[-(counter)])
                 txn_range = txn_range - 1
                 counter+=1
