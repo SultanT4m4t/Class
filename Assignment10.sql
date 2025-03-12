@@ -1,8 +1,8 @@
 -- create table books (
--- id serial primary key,
+-- id serial primary key not null,
 -- author text not null,
 -- title text not null
--- year_published int
+-- year_published int 
 -- )
 
 -- insert into books(id, title, author, year_published)
@@ -23,10 +23,10 @@
 -- where year_published = 2000
 
 -- delete from books
--- where author = 'Grace'
+-- where title = 'Life'
 
 -- create table borrowers(
--- id serial,
+-- id serial not null,
 -- name text not null,
 -- books_id int references books(id)
 -- )
