@@ -1,8 +1,8 @@
-def add(*args: int) -> int:
+def add(*args):
     num = sum(args)
     return num
 
-def subtract(*args: int) -> int:
+def subtract(*args):
     num = args[0]
     for i in range(1,len(args)):
         num = num - args[i]
@@ -15,7 +15,7 @@ def multiply(*args):
         num = num * i
     return num
 
-def divide(*args: int) -> int:
+def divide(*args):
     num = args[0]
     for i in range(1,len(args)):
         num = num / args[i]
