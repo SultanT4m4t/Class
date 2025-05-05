@@ -22,8 +22,10 @@ def divide(*args):
     return num
 
 
-
-if __name__ == '__main__':
-    a = multiply(2,3,4)
-    print(a)
-    
+#For testing "module" when called to make sure only what is needed runs
+if __name__ == "__main__":
+    a = add(2,3,4)
+    b = subtract(2,3,4)
+    c= multiply(2,3,4)
+    d = divide(2,3,4)
+    print(a, b, c, d)
